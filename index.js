@@ -86,30 +86,34 @@ const server = http.createServer((req, res) => {
     // Get Extension of File
     const extensionName = path.extname(filePath)
     // Declare Content Type
-    let contentType
+    // let contentType
+    let contentType = 'text/html'
     // Check Extension and Set Content Type
     switch (extensionName) {
-        case '.html':
-            contentType = 'text/html'
-            break;
+        // case '.html':
+        //     contentType = 'text/html'
+        //     break
         case '.json':
             contentType = 'application/json'
-            break;
+            break
         case '.css':
             contentType = 'text/css'
-            break;
+            break
         case '.js':
             contentType = 'text/javascript'
-            break;
+            break
         case '.txt':
             contentType = 'text/plain'
-            break;
+            break
         case '.png':
             contentType = 'image/png'
-            break;
+            break
         case '.jpg':
             contentType = 'image/jpg'
-            break;
+            break
+        // default:
+        //     contentType = 'text/html'
+        //     break
     }
     // Read File and Response
     fs.readFile(filePath, (err, content) => {
